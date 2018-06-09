@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8" />
+<title th:text="'Spring Boot: MVC + Thymeleaf +Data JPA -' + ${titulo}"></title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+	integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+	crossorigin="anonymous"></link>
+<link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+
+</head>
+<body>
+	<header th:fragment="header">
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<a class="navbar-brand" href="#">Spring Boot</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/listar}">Cliente</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div class="alert alert-success" th:if="${success != null}" th:text="${success}"></div>
+		<div class="alert alert-danger" th:if="${error != null}"  th:text="${error}"></div>
+		<div class="alert alert-warning" th:if="${warning != null}"  th:text="${warning}"></div>
+		<div class="alert alert-info" th:if="${info != null}"  th:text="${info}"></div>
+	</header>
+	<div class="container"></div>
+
+	<footer th:fragment="footer" class="container">
+	<hr />
+	<img height="143" width="287" th:src="@{/images/practipago.png}" alt= "Spring Logo" />
+	<p>
+		Realizado por Grupo 3
+	</p>
+	<p>
+	Este proyecto fue desarrollado para Java por los integrantes ...
+	</p>
+	<!--  <script th:src="@{/js/jquery-3.1.1.min.js}">
+	</script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script th:src="@{/js/jquery-ui.min.js}"></script>
+	</footer>
+</body>
+</html>
